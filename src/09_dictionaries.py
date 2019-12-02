@@ -51,4 +51,4 @@ for i in waypoints:
 # Write a loop that prints out all the field values for all the waypoints
 # YOUR CODE HERE
 for i in waypoints:
-    print(waypoints[i]["lat"])
+    print(i["lon"], i["lat"], i["name"])

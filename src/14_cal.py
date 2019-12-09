@@ -22,3 +22,23 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+userInput = input("gimmi a month(as a number), and a year. \n separated by commas.  unless you dont want to: ").split(',')
+
+#calls up a calendar for a given month/year. if no month year is given, it pulls up the current month.
+def get_calendar(aMonth=datetime.now().month, aYear=datetime.now().year):
+    calendar.setfirstweekday(calendar.SUNDAY)
+    return calendar.monthcalendar(aYear, aMonth)
+
+#checks to see if the user put in, zero, one, or two inputs.  complains if the format is all wrong.
+def calendarStlyes(userInput):
+  if (userInput.len() == 2):
+    get_calendar(userInput[0], userInput[1])
+  elif (userInput.len() == 0):
+    get_calendar()
+  elif (userInput.len() == 1):
+    get_calendar(userInput[0], datetime.now().year)
+  else:
+    print("WHAT ARE YOU EVEN DOING!? \n first, enter a number 1-12 for the month \n then a comma \n then enter a 4-digit number for the year. \n TRY IT AGAIN, YA DINGUS.")
+  
+  
